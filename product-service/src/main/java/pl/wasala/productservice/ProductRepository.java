@@ -1,4 +1,4 @@
-package pl.wasala.orderservice;
+package pl.wasala.productservice;
 
 import org.springframework.data.mongodb.repository.MongoRepository;
 import org.springframework.stereotype.Repository;
@@ -6,8 +6,8 @@ import org.springframework.stereotype.Repository;
 import java.util.Optional;
 
 @Repository
-public interface OrderRepository extends MongoRepository<Order, String> {
+public interface ProductRepository extends MongoRepository<Product, String> {
 
     @Override
-    Optional<Order> findById(String id);
+    Optional<Product> findById(String id);
 }

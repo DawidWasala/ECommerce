@@ -18,7 +18,7 @@ public class OrderService {
         return orderRepository.findAll();
     }
 
-    public Order findOrderById(Long orderId){
+    public Order findOrderById(String orderId){
         return orderRepository.findById(orderId).orElseThrow(OrderNotFoundException::new);
     }
 
@@ -26,7 +26,7 @@ public class OrderService {
         return orderRepository.save(order);
     }
 
-    public void deleteOrder(Long orderId){
+    public void deleteOrder(String orderId){
         orderRepository.deleteById(orderId);
     }
 

@@ -1,18 +1,15 @@
 package pl.wasala.orderservice;
 
-import com.fasterxml.jackson.annotation.JsonIgnoreProperties;
+import org.springframework.data.annotation.Id;
 
-import javax.persistence.*;
 import java.time.LocalDateTime;
 
-@Entity
-@JsonIgnoreProperties(ignoreUnknown = true)
 public class Order {
 
     @Id
-    @GeneratedValue(strategy = GenerationType.AUTO)
-    private Long id;
+    private String id;
     private LocalDateTime orderDate;
+    private List<Product>
 
     public Order() {}
 
@@ -20,11 +17,11 @@ public class Order {
         this.orderDate = orderDate;
     }
 
-    public Long getId() {
+    public String getId() {
         return id;
     }
 
-    public void setId(Long id) {
+    public void setId(String id) {
         this.id = id;
     }
 

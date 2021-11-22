@@ -1,2 +1,6 @@
 rootProject.name = 'ECommerce'
+include 'api-gateway'
+include 'config-server'
+include 'eureka-server'
 include 'order-service'
+include 'product-service'

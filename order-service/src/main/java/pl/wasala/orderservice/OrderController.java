@@ -5,7 +5,8 @@ import org.springframework.web.bind.annotation.*;
 import java.util.List;
 import java.util.Map;
 
-@RestController("/orders")
+@RestController("orders")
+@RequestMapping("/orders")
 public class OrderController {
 
     private final OrderService orderService;
@@ -19,8 +20,9 @@ public class OrderController {
         return orderService.findAllOrders();
     }
 
-    @GetMapping("/{orderId}")
-    public Order getOrderById(@PathVariable Long orderId){
+    @GetMapping(value = "/{orderId}")
+    public Order getOrderById(@PathVariable String orderId) {
+        System.out.println(orderId);
         return orderService.findOrderById(orderId);
     }
 
@@ -30,7 +32,7 @@ public class OrderController {
     }
 
     @DeleteMapping("/{orderId}")
-    public void deleteOrder(@PathVariable Long orderId){
+    public void deleteOrder(@PathVariable String orderId){
         orderService.deleteOrder(orderId);
     }
 
