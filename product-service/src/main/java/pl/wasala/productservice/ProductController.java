@@ -34,10 +34,10 @@ public class ProductController {
         productService.deleteProduct(productId);
     }
 
-    @PutMapping("/{orderId}")
-    public Product updateProduct(@RequestBody Product product){
-        return productService.updateProduct(product);
-    }
+//    @PutMapping("/{productId}")
+//    public Product updateProduct(@RequestBody Product product){
+//        return productService.updateProduct(product);
+//    }
 
 //    @PatchMapping("/{orderId}")
 //    public Order updateOrder(@RequestBody Map<String, String> updates, @PathVariable Long orderId){

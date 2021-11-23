@@ -36,10 +36,10 @@ public class OrderController {
         orderService.deleteOrder(orderId);
     }
 
-    @PutMapping("/{orderId}")
-    public Order updateOrder(@RequestBody Order order){
-        return orderService.updateOrder(order);
-    }
+//    @PutMapping("/{orderId}")
+//    public Order updateOrder(@RequestBody Order order){
+//        return orderService.updateOrder(order);
+//    }
 
 //    @PatchMapping("/{orderId}")
 //    public Order updateOrder(@RequestBody Map<String, String> updates, @PathVariable Long orderId){
