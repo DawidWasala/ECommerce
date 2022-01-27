@@ -1,7 +1,12 @@
 package pl.wasala.userservice.model;
 
+import pl.wasala.userservice.validation.PasswordMatches;
+import pl.wasala.userservice.validation.ValidEmail;
+import pl.wasala.userservice.validation.ValidPassword;
+
 import javax.validation.constraints.NotNull;
 
+@PasswordMatches
 public class UserInbound {
 
     @NotNull
@@ -11,12 +16,14 @@ public class UserInbound {
     private String lastName;
 
     @NotNull
+    @ValidPassword
     private String password;
 
     @NotNull
     private String matchingPassword;
 
     @NotNull
+    @ValidEmail
     private String email;
 
     public String getFirstName() {
