@@ -1,6 +1,7 @@
-package pl.wasala.userservice;
+package pl.wasala.userservice.contoller;
 
 import org.springframework.web.bind.annotation.*;
+import pl.wasala.userservice.service.UserService;
 import pl.wasala.userservice.model.User;
 import pl.wasala.userservice.model.UserInbound;
 
@@ -22,7 +23,7 @@ public class UserController {
     }
 
     @GetMapping("/{userId}")
-    public User getUserById(@PathVariable String userId) {
+    public User getUserById(@PathVariable Long userId) {
         return userService.findUserById(userId);
     }
 
@@ -32,7 +33,7 @@ public class UserController {
     }
 
     @DeleteMapping("/{userId}")
-    public void deleteUser(@PathVariable String userId) {
+    public void deleteUser(@PathVariable Long userId) {
         userService.deleteUser(userId);
     }
 

@@ -1,10 +1,10 @@
-package pl.wasala.userservice;
+package pl.wasala.userservice.service;
 
 import org.springframework.stereotype.Service;
-import pl.wasala.userservice.exception.UserEmailAlreadyExistsException;
 import pl.wasala.userservice.exception.UserNotFoundException;
 import pl.wasala.userservice.model.User;
 import pl.wasala.userservice.model.UserInbound;
+import pl.wasala.userservice.repository.UserRepository;
 
 import java.util.List;
 
@@ -21,7 +21,7 @@ public class UserService {
         return userRepository.findAll();
     }
 
-    public User findUserById(String userId) {
+    public User findUserById(Long userId) {
         return userRepository.findById(userId).orElseThrow(UserNotFoundException::new);
     }
 
@@ -42,7 +42,7 @@ public class UserService {
         return user;
     }
 
-    public void deleteUser(String userId) {
+    public void deleteUser(Long userId) {
         userRepository.deleteById(userId);
     }
 

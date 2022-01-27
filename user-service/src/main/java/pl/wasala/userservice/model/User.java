@@ -1,15 +1,27 @@
 package pl.wasala.userservice.model;
 
-import org.springframework.data.mongodb.core.index.Indexed;
+
+import javax.persistence.*;
+import java.util.List;
 
 public class User {
 
+    @Id
+    @GeneratedValue(strategy = GenerationType.AUTO)
+    private Long id;
+
     private String firstName;
+
     private String lastName;
+
     private String password;
 
-    @Indexed(unique = true)
+    @Column(unique = true)
     private String email;
+
+    @ManyToMany
+    private List<Role> roles;
+
     private boolean enabled = true;
 
     public User(String firstName, String lastName, String password, String email) {
